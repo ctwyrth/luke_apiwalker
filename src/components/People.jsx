@@ -6,6 +6,7 @@ const People = () => {
    const { byId } = useParams();
    const [searchData, setSearchData] = useState();
    const [searchAllData, setSearchAllData] = useState();
+   const [homeworld, setHomeworld] = useState();
    let navigate = useNavigate();
 
    const handleOnClick = (id) => {
@@ -54,7 +55,7 @@ const People = () => {
                <table className="w-50 table mx-auto text-start">
                   <thead className="bg-light">
                      <tr>
-                        <th colspan="2" className="text-center">Personal Details:</th>
+                        <th colSpan="2" className="text-center">Personal Details:</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -71,8 +72,12 @@ const People = () => {
                         <td>{searchData.hair_color}</td>
                      </tr>
                      <tr>
-                        <th>Height:</th>
+                        <th>Eye Color:</th>
                         <td>{searchData.eye_color}</td>
+                     </tr>
+                     <tr>
+                        <th>Homeworld:</th>
+                        <td><a href={ searchData.homeworld.slice(21) }>{ searchData.homeworld }</a></td>
                      </tr>
                   </tbody>
                </table>
@@ -86,7 +91,7 @@ export default People
 
 // onClick={() => handleOnClick(idx + 1) }
 
-{/* <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g4">
+/* <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g4">
    <div className="col">
       <div className="card">
          <div className="card-body">
@@ -94,4 +99,6 @@ export default People
          </div>
       </div>
    </div>
-</div> */}
+</div> */
+
+// {axios.get(searchData.homeworld).then(response => setHomeworld(response.data.name)).catch(error => console.log(error))}

@@ -39,7 +39,7 @@ const Ships = () => {
                { searchAllData.map((item, idx) => {
                   return (
                   <div className="col" key={idx}>
-                     <div className="card" onClick={() => handleOnClick(idx + 1)}>
+                     <div className="card" onClick={() => handleOnClick(idx + 2)}>
                         <div className="card-body">
                            <h5 className="card-title mb-0">{ item.name }</h5>
                         </div>
