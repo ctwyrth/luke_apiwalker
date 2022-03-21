@@ -7,6 +7,7 @@ const People = () => {
    const [searchData, setSearchData] = useState();
    const [searchAllData, setSearchAllData] = useState();
    const [homeworld, setHomeworld] = useState();
+
    let navigate = useNavigate();
 
    const handleOnClick = (id) => {

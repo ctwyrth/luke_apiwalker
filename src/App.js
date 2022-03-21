@@ -7,17 +7,19 @@ import Ships from './components/Ships';
 import Results from './components/Results';
 
 const Home = () => {
-  return ( <div className="container text-center text-warning mt-4"><h1 className="display-6">welcome to the site</h1></div> )
+  return( <div className="container text-center text-warning mt-4"><h1 className="display-6">welcome to the site</h1></div> )
 }
 
-const BadLink = () => ( <div className="container text-center text-danger mt-4"><h1 className="display-6">the ROUTE you attempted to travel was blocked by an unknown celestial event</h1></div> )
+const BadLink = () => {
+  return( <div className="container text-center text-danger mt-4"><h1 className="display-6">the ROUTE you attempted to travel was blocked by a celestial event</h1></div> )
+}
 
 function App() {
   return (
     <div className="container-fluid">
       <div className="container" style={{height: 100+'vh'}}>
         <Routes>
-          <Route path='/' element={ <Navigation />}>
+          <Route path='/' element={ <Navigation /> }>
             <Route index element={ <Home /> } />
             <Route path='people' element={ <People />} />
             <Route path='planets' element={ <Planets />} />
